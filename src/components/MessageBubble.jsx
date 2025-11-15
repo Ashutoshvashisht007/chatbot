@@ -41,7 +41,7 @@ const MessageBubble = ({ message, onSaveNote }) => {
                                 <button
                                     key={emoji}
                                     onClick={() => setReaction(emoji)}
-                                    className={`text-sm hover:scale-125 transition-transform ${reaction === emoji ? 'scale-125' : ''}`}
+                                    className={`text-sm hover:scale-125 transition-transform cursor-pointer ${reaction === emoji ? 'scale-125' : ''}`}
                                 >
                                     {emoji}
                                 </button>
@@ -53,7 +53,7 @@ const MessageBubble = ({ message, onSaveNote }) => {
                 {showSave && !isUser && (
                     <button
                         onClick={handleSave}
-                        className="mt-2 text-xs px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
+                        className="mt-2 text-xs px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition-colors cursor-pointer"
                     >
                         💾 Save Note
                     </button>
@@ -82,13 +82,13 @@ const MessageBubble = ({ message, onSaveNote }) => {
                         <div className="flex gap-2 mt-6">
                             <button
                                 onClick={confirmSave}
-                                className="flex-1 bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors font-medium"
+                                className="flex-1 bg-blue-500 text-white py-2 rounded cursor-pointer hover:bg-blue-600 transition-colors font-medium"
                             >
                                 Save
                             </button>
                             <button
                                 onClick={() => setShowTagModal(false)}
-                                className="flex-1 bg-gray-500 text-white py-2 rounded hover:bg-gray-600 transition-colors font-medium"
+                                className="flex-1 bg-gray-500 text-white py-2 rounded cursor-pointer hover:bg-gray-600 transition-colors font-medium"
                             >
                                 Cancel
                             </button>

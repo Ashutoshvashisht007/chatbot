@@ -23,11 +23,12 @@ const ChatPage = () => {
     if (!input.trim()) return;
 
     dispatch(addMessage({ role: 'user', text: input }));
+    const userInput = input;
     setInput('');
     dispatch(setTyping(true));
 
     try {
-      const response = await geminiService.sendMessage(input);
+      const response = await geminiService.sendMessage(userInput);
       dispatch(setTyping(false));
       dispatch(addMessage({ role: 'ai', text: response }));
     } catch (error) {
@@ -41,7 +42,7 @@ const ChatPage = () => {
   };
 
   return (
-    <div className="flex flex-1 overflow-hidden">
+    <div className="flex flex-1 overflow-y-auto h-[90vh]">
       <div className="flex-1 flex flex-col">
         <div className={`flex-1 overflow-y-auto p-4 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'}`}>
           <div className="max-w-4xl mx-auto">
@@ -71,7 +72,7 @@ const ChatPage = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+              onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Type your message..."
               className={`flex-1 px-4 py-3 rounded-lg ${theme === 'dark'
                   ? 'bg-gray-700 text-white border-gray-600'
@@ -81,7 +82,7 @@ const ChatPage = () => {
             <button
               onClick={handleSend}
               disabled={!input.trim()}
-              className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
             >
               Send
             </button>

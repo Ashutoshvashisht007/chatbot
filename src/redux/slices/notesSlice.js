@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 const notesSlice = createSlice({
   name: "notes",
   initialState: {
-    notes: [] // {id, title, content, tag, createdAt, updatedAt, sourceMessageId?}
+    notes: [] 
   },
   reducers: {
     addNote: (state, action) => {

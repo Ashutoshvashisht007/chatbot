@@ -30,7 +30,6 @@ export default function App() {
           overflow: hidden;
         }
       `}</style>
-        {/* <QuickNotesPanel /> */}
       </div>
     </div>
   );

@@ -21,28 +21,28 @@ const Header = () => {
         <nav className="hidden md:flex gap-6 items-center">
           <button 
             onClick={() => navigate("/chat")} 
-            className={`flex items-center gap-2 ${currentPage === 'chat' ? 'text-blue-500' : ''} hover:text-blue-400 transition-colors`}
+            className={`flex items-center gap-2 ${currentPage === 'chat' ? 'text-blue-500' : ''} hover:text-blue-400 transition-colors cursor-pointer`}
           >
             <MessageSquare size={20} />
             Chat
           </button>
           <button 
             onClick={() => navigate("/notes")} 
-            className={`flex items-center gap-2 ${currentPage === 'notes' ? 'text-blue-500' : ''} hover:text-blue-400 transition-colors`}
+            className={`flex items-center gap-2 ${currentPage === 'notes' ? 'text-blue-500' : ''} hover:text-blue-400 transition-colors cursor-pointer`}
           >
             <StickyNote size={20} />
             Notes
           </button>
           <button 
             onClick={() => dispatch(toggleTheme())} 
-            className={`p-2 rounded-lg ${theme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-200'} transition-colors`}
+            className={`p-2 rounded-lg ${theme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-200'} transition-colors cursor-pointer`}
           >
             {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
           </button>
         </nav>
 
         <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          {menuOpen ? <X className="cursor-pointer" size={24} /> : <Menu className="cursor-pointer" size={24} />}
         </button>
       </div>
 
@@ -50,23 +50,23 @@ const Header = () => {
         <div className={`md:hidden ${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-50'} px-4 py-4 space-y-2`}>
           <button 
             onClick={() => { navigate("/chat"); setMenuOpen(false); }} 
-            className="block w-full text-left py-2 hover:text-blue-500 transition-colors"
+            className="block w-full text-left py-2 hover:text-blue-500 transition-colors cursor-pointer"
           >
             <MessageSquare size={20} className="inline mr-2" />
             Chat
           </button>
           <button 
             onClick={() => { navigate("/notes"); setMenuOpen(false); }} 
-            className="block w-full text-left py-2 hover:text-blue-500 transition-colors"
+            className="block w-full text-left py-2 hover:text-blue-500 transition-colors cursor-pointer"
           >
             <StickyNote size={20} className="inline mr-2" />
             Notes
           </button>
           <button 
             onClick={() => dispatch(toggleTheme())} 
-            className="block w-full text-left py-2 hover:text-blue-500 transition-colors"
+            className="block w-full text-left py-2 hover:text-blue-500 transition-colors cursor-pointer"
           >
-            {theme === 'light' ? <Moon size={20} className="inline mr-2" /> : <Sun size={20} className="inline mr-2" />}
+            {theme === 'light' ? <Moon size={20} className="inline mr-2" /> : <Sun size={20} className="inline mr-2 " />}
             Toggle Theme
           </button>
         </div>

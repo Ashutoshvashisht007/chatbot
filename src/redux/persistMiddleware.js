@@ -1,4 +1,4 @@
-// Simple persistence to localStorage for slices chat, notes, theme
+
 export const persistMiddleware = store => next => action => {
   const result = next(action);
   const state = store.getState();

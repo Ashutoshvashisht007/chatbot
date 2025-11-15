@@ -74,7 +74,7 @@ const NotesPage = () => {
             className="px-4 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 flex items-center justify-center gap-2 transition-colors font-medium"
           >
             <Download size={20} />
-            <span className="hidden sm:inline">Export PDF</span>
+            <span className="hidden sm:inline cursor-pointer">Export PDF</span>
           </button>
         </div>
 
@@ -106,13 +106,13 @@ const NotesPage = () => {
                       onClick={() => handleEdit(note)}
                       className="text-blue-500 hover:text-blue-600 transition-colors p-1"
                     >
-                      <Edit2 size={16} />
+                      <Edit2 className="cursor-pointer" size={16} />
                     </button>
                     <button
                       onClick={() => handleDelete(note.id)}
                       className="text-red-500 hover:text-red-600 transition-colors p-1"
                     >
-                      <Trash2 size={16} />
+                      <Trash2 className="cursor-pointer" size={16} />
                     </button>
                   </div>
                 </div>
@@ -129,13 +129,13 @@ const NotesPage = () => {
                     <div className="flex gap-2 mt-2">
                       <button
                         onClick={() => handleSaveEdit(note.id)}
-                        className="px-3 py-1 bg-green-500 text-white rounded text-sm hover:bg-green-600 transition-colors font-medium"
+                        className="px-3 py-1 bg-green-500 text-white rounded text-sm hover:bg-green-600 transition-colors font-medium cursor-pointer"
                       >
                         Save
                       </button>
                       <button
                         onClick={() => setEditingId(null)}
-                        className="px-3 py-1 bg-gray-500 text-white rounded text-sm hover:bg-gray-600 transition-colors font-medium"
+                        className="px-3 py-1 bg-gray-500 text-white rounded text-sm hover:bg-gray-600 transition-colors font-medium cursor-pointer"
                       >
                         Cancel
                       </button>
