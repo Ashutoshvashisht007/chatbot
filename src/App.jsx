@@ -1,9 +1,7 @@
-import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import ChatPage from "./pages/ChatPage";
 import NotesPage from "./pages/NotesPage";
 import Header from "./components/Header";
-import QuickNotesPanel from "./components/QuickNotesPanel";
 
 export default function App() {
   return (
